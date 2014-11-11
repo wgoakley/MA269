@@ -4,5 +4,6 @@
 %Input: A = lower bound on f, C = lower bound on f''', h = selfexplainatory
 
 function error = firstDerMidpointError(A,C,h)
-    error = 2^(-52)*A*h^-1 + (C/6)*h^2;
+    h = log(h)/log(10);
+    error = (1/6)*10^(2*h) + 10^(-17-h);
 return;
